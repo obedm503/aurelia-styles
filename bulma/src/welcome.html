@@ -1,0 +1,40 @@
+<template>
+  <section class="content">
+    <h2>${heading}</h2>
+
+    <form role="form" submit.delegate="submit()">
+      <div class="field">
+        <label class="label" for="fn">First Name</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            value.bind="firstName"
+            id="fn"
+            placeholder="first name"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="ln">Last Name</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            value.bind="lastName"
+            id="ln"
+            placeholder="last name"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Full Name</label>
+        <p class="help">${fullName | upper}</p>
+      </div>
+
+      <button type="submit" class="button is-primary">Submit</button>
+    </form>
+  </section>
+</template>

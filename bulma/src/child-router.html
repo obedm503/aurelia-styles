@@ -1,0 +1,28 @@
+<template>
+  <section>
+    <div class="columns">
+      <div class="column is-2">
+        <aside class="menu">
+          <p class="menu-label">
+            ${heading}
+          </p>
+
+          <ul class="menu-list">
+            <li repeat.for="row of router.navigation">
+              <a
+                href.bind="row.href"
+                class="${row.isActive ? 'is-active' : ''}"
+              >
+                ${row.title}
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="column is-10">
+        <router-view></router-view>
+      </div>
+    </div>
+  </section>
+</template>

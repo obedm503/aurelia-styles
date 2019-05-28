@@ -1,0 +1,28 @@
+<template>
+  <h2>${heading}</h2>
+  <form role="form" submit.delegate="submit()">
+    <ion-item>
+      <ion-label for="fn">First Name</ion-label>
+      <ion-input
+        id="fn"
+        placeholder="first name"
+        value.two-way="firstName"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="ln">Last Name</ion-label>
+      <ion-input
+        value.two-way="lastName"
+        id="ln"
+        placeholder="last name"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Full Name: ${fullName | upper}</ion-label>
+    </ion-item>
+
+    <ion-button type="submit">Submit</ion-button>
+  </form>
+</template>

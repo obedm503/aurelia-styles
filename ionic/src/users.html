@@ -1,0 +1,31 @@
+<template>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" size-md="3" repeat.for="user of users">
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar>
+              <ion-img
+                src.bind="user.avatar_url"
+                crossorigin
+                ref="image"
+              ></ion-img>
+            </ion-avatar>
+
+            <ion-card-title>${user.login}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <a
+              target="_blank"
+              class="btn btn-default"
+              href.bind="user.html_url"
+            >
+              Contact
+            </a>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</template>

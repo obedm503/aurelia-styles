@@ -1,0 +1,38 @@
+<template>
+  <require from="./blur-image"></require>
+
+  <section class="content">
+    <h2>${heading}</h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-4" repeat.for="user of users">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src.bind="user.avatar_url" crossorigin ref="image" />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">${user.login}</p>
+              </div>
+            </div>
+
+            <div class="content">
+              <p>
+                <a
+                  target="_blank"
+                  class="btn btn-default"
+                  href.bind="user.html_url"
+                >
+                  Contact
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

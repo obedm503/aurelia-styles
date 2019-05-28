@@ -1,0 +1,17 @@
+<template bindable="router">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>${router.title}</ion-title>
+
+      <ion-buttons slot="end">
+        <ion-button
+          repeat.for="button of router.navigation"
+          color.bind="button.isActive ? 'dark':''"
+          href.bind="button.href"
+        >
+          ${button.title}
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</template>

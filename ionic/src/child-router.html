@@ -1,0 +1,28 @@
+<template>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2">
+        <ion-list>
+          <ion-list-header>
+            <ion-label>
+              ${heading}
+            </ion-label>
+          </ion-list-header>
+
+          <ion-button
+            repeat.for="row of router.navigation"
+            href.bind="row.href"
+            expand="block"
+            color="${button.isActive ? 'dark':'primary'}"
+          >
+            <ion-label>${row.title}</ion-label>
+          </ion-button>
+        </ion-list>
+      </ion-col>
+
+      <ion-col size="10">
+        <router-view></router-view>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</template>
